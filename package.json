@@ -9,7 +9,7 @@
     "start": "node bin/brain-games.js"
   },
   "bin": {
-    "brain-games": "./brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "repository": {
     "type": "git",
