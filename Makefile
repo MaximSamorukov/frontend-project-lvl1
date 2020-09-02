@@ -12,6 +12,3 @@ brain-games:
 
 lint:
 	npx eslint .
-
-.PHONY:	lint
-
