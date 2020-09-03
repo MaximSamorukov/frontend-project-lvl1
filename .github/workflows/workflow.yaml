@@ -7,11 +7,11 @@ jobs:
       run:
         shell:  bash
     steps:
-    - name: "sudo npm make"
-      run:  sudo npm install make
+    # - name: "sudo npm make"
+    #   run:  sudo npm install make
     
     - name: "sudo npm install"
       run:  sudo npm install
 
-    - name: "make lint"
-      run:  make lint
+    - name: "npx eslint ."
+      run:  npx eslint .
