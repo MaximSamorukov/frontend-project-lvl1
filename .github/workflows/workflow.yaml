@@ -1,4 +1,4 @@
-name: Eslint test
+name: Hexlet Project 1 w_flow
 on:
   - push
   - pull_request
