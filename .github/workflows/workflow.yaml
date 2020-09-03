@@ -10,8 +10,5 @@ jobs:
     - name: "sudo npm make"
       run:  sudo npm install make
 
-    - name: "sudo npm link"
-      run:  sudo npm link
-
     - name: "make lint"
       run:  make lint
