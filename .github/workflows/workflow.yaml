@@ -1,6 +1,7 @@
 name: workflow
 on: push
 jobs:
+  runs-on: ubuntu-latest
   job:
     steps:
     - run: npm link
