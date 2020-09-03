@@ -1,6 +1,7 @@
 name: workflow
 on: push
-jobs:
-steps:
-  - run: npm link
-  - run: make lint
+job:
+  jobs:
+    steps:
+    - run: npm link
+    - run: make lint
