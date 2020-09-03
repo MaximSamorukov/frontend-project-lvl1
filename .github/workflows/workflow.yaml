@@ -10,8 +10,8 @@ jobs:
     - name: "sudo npm make"
       run:  sudo npm install make
     
-    - name: "publish"
-      run:  npm publish --dry-run
-      
+    - name: "sudo publish"
+      run:  sudo npm publish --dry-run
+
     - name: "make lint"
       run:  make lint
