@@ -10,11 +10,5 @@ jobs:
     # - name: "sudo npm make"
     #   run:  sudo npm install make
 
-    - name: "npm install eslint"
-      run:  sudo npm install eslint
-
-    - name: "npx eslint"
-      run:  npx eslint --init
-
-    - name: "run eslint"
-      run:  npx eslint .
+    - name: "npm publish"
+      run:  sudo npm publish --dry-run
