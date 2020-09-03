@@ -27,4 +27,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: make lint #echo "Hello ${{ github.event.inputs.name }}"
+      run: npm link #echo "Hello ${{ github.event.inputs.name }}"
