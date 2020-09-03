@@ -1,9 +1,6 @@
 name: workflow
 on: push
-jobs:
-  make_lint_job:
-    name: The job
-    runs-on: ubuntu-latest
-    steps:
-    - run: npm link
-      run: make lint
+runs:
+steps:
+  - run: npm link
+  - run: make lint
