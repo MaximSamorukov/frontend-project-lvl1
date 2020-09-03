@@ -13,8 +13,5 @@ jobs:
     - name: "sudo npm install"
       run:  sudo npm install
 
-    - name: "brain games"
-      run:  brain-games
-
     - name: "make lint"
       run:  make lint
