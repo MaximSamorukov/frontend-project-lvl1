@@ -1,4 +1,5 @@
 name: workflow
 on: push
 jobs:
-  - run: make lint
+  make_lint_job:
+    - run: make lint
