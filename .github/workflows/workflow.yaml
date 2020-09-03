@@ -2,4 +2,5 @@ name: workflow
 on: push
 jobs:
   make_lint_job:
-    - run: make lint
+    - run: npm link
+      run: make lint
