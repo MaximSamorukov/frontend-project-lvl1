@@ -7,5 +7,5 @@ jobs:
       run:
         shell:  bash
     steps:
-    - run: npm link
+    - run: sudo npm link
     - run: make lint
