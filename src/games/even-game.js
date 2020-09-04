@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   greeting, question, answerValidation, createNumber, isGameAllowed, isEven, game,
 } from '../index.js';
@@ -7,7 +6,7 @@ const theQuestion = (name, stepNumber) => {
   const theNumber = createNumber(30);
   const correctAnswer = isEven(theNumber);
   const questionPhrase = `${theNumber}`;
-  const userAnswer = question(questionPhrase, correctAnswer);
+  const userAnswer = question(questionPhrase);
   const validation = answerValidation(correctAnswer, userAnswer, name, stepNumber);
   return validation;
 };

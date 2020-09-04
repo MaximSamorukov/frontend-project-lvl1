@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
 
-export function index(message) {
-  const game = readlineSync.question('May I have your name?: ');
-  console.log(game);
-  console.log(`message: ${message}`);
-}
-
 export function greeting() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
@@ -13,7 +7,7 @@ export function greeting() {
   return name;
 }
 
-export function question(phrase, answer) {
+export function question(phrase) {
   console.log(`Question: ${phrase}`);
   const userAnswer = readlineSync.question('Your answer: ');
   return userAnswer;
