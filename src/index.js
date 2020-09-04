@@ -25,8 +25,8 @@ export const createNumber = (num) => Math.ceil(Math.random() * num);
 
 export function isGameAllowed() {
   let stepsNumber = 3;
+  let validVerdict = true;
   const innerFunction = (valid = true) => {
-    let validVerdict = true;
     if (valid === false || stepsNumber < 1) {
       validVerdict = false;
     }
@@ -41,8 +41,11 @@ export function answerValidation(correctAnswer, userAnswer, name) {
   let validationVerdict = 'Correct';
   if (!ifCorrect) {
     validationVerdict = `${userAnswer} is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again, ${name}`;
-    isGameAllowed()(false);
   }
   console.log(validationVerdict);
-  return validationVerdict;
+  let returnValue = true;
+  if (validationVerdict !== 'Correct') {
+    returnValue = false;
+  }
+  return returnValue;
 }

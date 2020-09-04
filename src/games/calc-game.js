@@ -17,6 +17,7 @@ const theQuestion = (name) => {
   const questionPhrase = `${firstNumber} ${operationSigns[operation]} ${secondNumber}`;
   const userAnswer = parseInt(question(questionPhrase, correctAnswer), 10);
   const validation = answerValidation(correctAnswer, userAnswer, name);
+  return validation;
 };
 
 export default function calcGame() {
@@ -27,6 +28,8 @@ export default function calcGame() {
   const firstPhrase = 'What is the result of the expression?';
   console.log(firstPhrase);
   while (gameAllowance()) {
-    theQuestion(userName);
+    if (!theQuestion(userName)) {
+      gameAllowance(false);
+    }
   }
 }
