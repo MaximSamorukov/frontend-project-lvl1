@@ -66,3 +66,18 @@ export function gcd(num1, num2) {
   }
   return innerNum1;
 }
+
+export function game(isGameAllowedFunc, greetingFunc, firstPhrase, theQuestion) {
+  // const game = readlineSync.question('May I have your name?: ');
+  // console.log(game);
+  let step = 1;
+  const gameAllowance = isGameAllowedFunc();
+  const userName = greetingFunc() ?? 'Mr';
+  console.log(firstPhrase);
+  while (gameAllowance()) {
+    if (!theQuestion(userName, step)) {
+      gameAllowance(false);
+    }
+    step += 1;
+  }
+}
