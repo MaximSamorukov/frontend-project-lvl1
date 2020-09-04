@@ -62,8 +62,6 @@ export function gcd(num1, num2) {
 }
 
 export function game(isGameAllowedFunc, greetingFunc, firstPhrase, theQuestion) {
-  // const game = readlineSync.question('May I have your name?: ');
-  // console.log(game);
   let step = 1;
   const gameAllowance = isGameAllowedFunc();
   const userName = greetingFunc() ?? 'Mr';
@@ -80,8 +78,10 @@ export function makeProgression() {
   let array = Array(10);
   const firstNumber = createNumber(10);
   const step = createNumber(10);
-  array[0] = firstNumber;
-  array = array.map((item, i) => item + i * step);
+  for (let i = 0; i <= 9; i += 1) {
+    array[i] = firstNumber;
+  }
+  array = array.map((item, i) => (item + i * step));
   return array;
 }
 
