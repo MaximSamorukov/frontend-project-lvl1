@@ -4,3 +4,9 @@
 
 Brain-even game:
 <a href="https://asciinema.org/a/357787" target="_blank"><img src="https://asciinema.org/a/357787.svg" /></a>
+
+Brain-calc game:
+<a href="https://asciinema.org/a/357865" target="_blank"><img src="https://asciinema.org/a/357865.svg" /></a>
+
+Brain-gcd game:
+<a href="https://asciinema.org/a/357869" target="_blank"><img src="https://asciinema.org/a/357869.svg" /></a>

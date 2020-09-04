@@ -20,22 +20,6 @@ const theQuestion = (name, stepNumber) => {
   return validation;
 };
 
-// export default function calcGame() {
-//   // const game = readlineSync.question('May I have your name?: ');
-//   // console.log(game);
-//   let step = 1;
-//   const gameAllowance = isGameAllowed();
-//   const userName = greeting() ?? 'Mr';
-//   const firstPhrase = 'What is the result of the expression?';
-//   console.log(firstPhrase);
-//   while (gameAllowance()) {
-//     if (!theQuestion(userName, step)) {
-//       gameAllowance(false);
-//     }
-//     step += 1;
-//   }
-// }
-
 export default function calcGame() {
   const firstPhrase = 'What is the result of the expression?';
   game(isGameAllowed, greeting, firstPhrase, theQuestion);
