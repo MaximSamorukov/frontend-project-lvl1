@@ -53,3 +53,16 @@ export function answerValidation(correctAnswer, userAnswer, name, step) {
   }
   return returnValue;
 }
+
+export function gcd(num1, num2) {
+  let innerNum1 = num1;
+  let innerNum2 = num2;
+  innerNum1 = Math.abs(innerNum1);
+  innerNum2 = Math.abs(innerNum2);
+  while (innerNum2) {
+    const t = innerNum2;
+    innerNum2 = innerNum1 % innerNum2;
+    innerNum1 = t;
+  }
+  return innerNum1;
+}
