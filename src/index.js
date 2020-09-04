@@ -14,8 +14,6 @@ export function greeting() {
 }
 
 export function question(phrase, answer) {
-  console.log(phrase);
-  console.log(answer);
   console.log(`Question: ${phrase}`);
   const userAnswer = readlineSync.question('Your answer: ');
   return userAnswer;
