@@ -75,3 +75,19 @@ export function game(isGameAllowedFunc, greetingFunc, firstPhrase, theQuestion) 
     step += 1;
   }
 }
+
+export function makeProgression() {
+  let array = Array(10);
+  const firstNumber = createNumber(10);
+  const step = createNumber(10);
+  array[0] = firstNumber;
+  array = array.map((item, i) => item + i * step);
+  return array;
+}
+
+export function progressionAsString(array, item) {
+  const [...newArray] = [...array];
+  newArray[item] = '..';
+  const string = newArray.join(' ');
+  return string;
+}
