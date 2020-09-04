@@ -1,37 +1,29 @@
 import readlineSync from 'readline-sync';
+import {
+  greeting, question, answerValidation, createNumber, isGameAllowed, isEven,
+} from '../index.js';
 
-const createNumber = () => Math.ceil(Math.random() * 100);
-function isEven(num) {
-  const answer = num % 2 === 0 ? 'yes' : 'no';
-  return answer;
-}
-function reaction(number, userAnswer, userName, length) {
-  let returnAnswer = 'Correct!';
-  const isUserCorrect = isEven(number) === userAnswer;
-  if (!isUserCorrect) {
-    returnAnswer = `${userAnswer} is wrong answer ;(. Correct answer was "${isEven(number)}".\nLet's try again, ${userName}!`;
-  }
-  if (isUserCorrect && length === 0) {
-    returnAnswer = `${returnAnswer}\nCongratulations, ${userName}!`;
-  }
-  return returnAnswer;
-}
+const theQuestion = (name, stepNumber) => {
+  const theNumber = createNumber(30);
+  const correctAnswer = isEven(theNumber);
+  const questionPhrase = `${theNumber}`;
+  const userAnswer = question(questionPhrase, correctAnswer);
+  const validation = answerValidation(correctAnswer, userAnswer, name, stepNumber);
+  return validation;
+};
+
 export default function evenGame() {
-  let gameLength = 3;
-  let name = '';
-
-  console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name?: ');
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  while (gameLength > 0) {
-    gameLength -= 1;
-    const number = createNumber();
-    const answer = readlineSync.question(`Question: ${number} `);
-    const answerToUser = reaction(number, answer, name, gameLength);
-    if (answerToUser.slice(0, 8) !== 'Correct!') {
-      gameLength = 0;
+  // const game = readlineSync.question('May I have your name?: ');
+  // console.log(game);
+  let step = 1;
+  const gameAllowance = isGameAllowed();
+  const userName = greeting() ?? 'Mr';
+  const firstPhrase = 'Answer "yes" if the number is even, otherwise answer "no".';
+  console.log(firstPhrase);
+  while (gameAllowance()) {
+    if (!theQuestion(userName, step)) {
+      gameAllowance(false);
     }
-    console.log(answerToUser);
+    step += 1;
   }
 }

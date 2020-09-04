@@ -36,15 +36,21 @@ export function isGameAllowed() {
   return innerFunction;
 }
 
-export function answerValidation(correctAnswer, userAnswer, name) {
+export function isEven(num) {
+  const answer = num % 2 === 0 ? 'yes' : 'no';
+  return answer;
+}
+
+export function answerValidation(correctAnswer, userAnswer, name, step) {
   const ifCorrect = correctAnswer === userAnswer;
-  let validationVerdict = 'Correct';
+  let validationVerdict = step === 3 ? `Correct!\nCongratulations, ${name}` : 'Correct!';
+
   if (!ifCorrect) {
     validationVerdict = `${userAnswer} is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again, ${name}`;
   }
   console.log(validationVerdict);
   let returnValue = true;
-  if (validationVerdict !== 'Correct') {
+  if (validationVerdict !== 'Correct!') {
     returnValue = false;
   }
   return returnValue;
