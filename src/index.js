@@ -21,24 +21,11 @@ export function question(phrase, answer) {
   return userAnswer;
 }
 
-export function answerValidation(correctAnswer, userAnswer, name) {
-  const ifCorrect = correctAnswer === userAnswer;
-  let validationVerdict = 'Correct';
-  if (!ifCorrect) {
-    validationVerdict = `${userAnswer} is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again, ${name}`;
-  }
-  console.log(validationVerdict);
-  return validationVerdict;
-}
-
 export const createNumber = (num) => Math.ceil(Math.random() * num);
 
-export function isGameAllowed(valid = true) {
+export function isGameAllowed() {
   let stepsNumber = 3;
-  if (valid === false) {
-    stepsNumber = 0;
-  }
-  const innerFunction = () => {
+  const innerFunction = (valid = true) => {
     let validVerdict = true;
     if (valid === false || stepsNumber < 1) {
       validVerdict = false;
@@ -47,4 +34,15 @@ export function isGameAllowed(valid = true) {
     return validVerdict;
   };
   return innerFunction;
+}
+
+export function answerValidation(correctAnswer, userAnswer, name) {
+  const ifCorrect = correctAnswer === userAnswer;
+  let validationVerdict = 'Correct';
+  if (!ifCorrect) {
+    validationVerdict = `${userAnswer} is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again, ${name}`;
+    isGameAllowed()(false);
+  }
+  console.log(validationVerdict);
+  return validationVerdict;
 }
