@@ -91,3 +91,17 @@ export function progressionAsString(array, item) {
   const string = newArray.join(' ');
   return string;
 }
+
+export function isPrime(num) {
+  let returnAnswer = 'yes';
+  if (num < 2) {
+    returnAnswer = 'no';
+  }
+  const m = Math.sqrt(num);
+  for (let i = 2; i <= m; i += 1) {
+    if (num % i === 0) {
+      returnAnswer = 'no';
+    }
+  }
+  return returnAnswer;
+}
